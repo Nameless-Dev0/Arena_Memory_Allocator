@@ -1,5 +1,6 @@
 CC = gcc
 CFLAGS = -fsanitize=address -fno-omit-frame-pointer -O1 -Wall -Wextra -Iinclude -g
+LDFLAGS = -fsanitize=address
 
 SRC = $(wildcard src/*.c)
 OBJ = $(patsubst src/%.c, build/%.o, $(SRC))
@@ -10,7 +11,7 @@ TARGET = build/arena_allocator
 all: $(TARGET)
 
 $(TARGET): $(OBJ)
-	$(CC) $(OBJ) -o $@
+	$(CC) $(OBJ) -o $@ $(LDFLAGS)
 
 build/%.o: src/%.c $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
