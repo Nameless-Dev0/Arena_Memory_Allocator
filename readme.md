@@ -13,13 +13,6 @@ This project provides a basic memory allocator that manages a fixed-size buffer 
 - Simple `afree` function to free memory by resetting the allocation pointer.
 - Checks for available space before allocation.
 
-## Files
-
-- `include/arena.h` - Header file defining the allocator interface and constants.
-- `src/arena.c` - Implementation of the arena allocator functions.
-- `src/main.c` - Example usage of the allocator.
-- `Makefile` - Build instructions.
-
 ## Usage
 
 1. Include `arena.h` in your project.
